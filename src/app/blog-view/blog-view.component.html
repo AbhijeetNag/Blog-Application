@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row" *ngIf="currentBlog">
+    <div class="col-md-12">
+      <h2>{{currentBlog.title}}</h2>
+      <p>Posted by {{currentBlog.author}} on {{currentBlog.created | date}}</p>
+      <p *ngIf="currentBlog.tag!= undefined && currentBlog.tag.length>0">Tags : <span *ngFor="let tags of currentBlog.tag; let first= first; let last= last">{{tags}}{{last?'.':',
+          '}}
+        </span></p>
+      <hr>
+      <div [innerHTML]="currentBlog.bodyHTML"></div>
+      <hr>
+      <h5>Category: {{currentBlog.category}}</h5>
+    </div>
+  </div>
+  <br><br>
+  <div class="row" *ngIf="currentBlog">
+    <div class="col-md-4">
+      <a class="btn btn-primary" [routerLink]="['/edit',currentBlog.blogId]">Edit</a>
+    </div>
+    <div class="col-md-4">
+      <a class="btn btn-danger" (click)="deleteThisBlog()">Delete</a>
+    </div>
+    <div class="col-md-4">
+      <a class="btn btn-warning" (click)="goBackToPreviousPage()">Go Back</a>
+    </div>
+  </div>
+</div>

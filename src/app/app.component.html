@@ -1,0 +1,37 @@
+<!-- creating the shell page later we can change it-->
+<div style="text-align: center">
+  <div class="container">
+    <div class="row header">
+      <div class="col-md-12">
+        <a style="color:white">Blog Application</a>
+      </div>
+    </div>
+    <!--Using Navbar -->
+    <nav class="navbar navbar-light navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <!--Brand and toggle icon grouped for better mobile view-->
+        <div class="navbar-header">
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+            <span class="sr-only">Toogle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav mr-auto">
+            <li><a [routerLink]="['/home']" class="p-3">Home</a></li>
+            <li><a [routerLink]="['/about']" class="p-3">About</a></li>
+            <li><a [routerLink]="['/create']" class="p-3">Post a Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <br>
+  <router-outlet></router-outlet>
+
+
+</div>
